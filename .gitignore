@@ -1,0 +1,27 @@
+# Ignorowanie plików checkpoint Jupyter
+.ipynb_checkpoints/
+
+# Ignorowanie innych potencjalnie zbędnych plików
+__pycache__/
+*.py[cod]
+
+# Ignorowanie plików systemowych
+.DS_Store
+Thumbs.db
+
+# Ignorowanie danych wrażliwych
+*.env
+secrets.json
+
+# Ignorowanie plików tymczasowych i logów
+*.log
+*.sqlite3
+
+# Ignorowanie danych wyjściowych (np. modeli, wyników analizy)
+*.h5
+*.parquet
+*.pkl
+
+# Ignorowanie środowiska wirtualnego
+venv/
+.env/
