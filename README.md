@@ -19,14 +19,14 @@ Dodatkowo, wykonujemy **selekcję cech** na podstawie ich istotności (**Feature
    - **Usunięcie stopwords**: eliminacja często występujących, ale mało znaczących słów.
    - **Lematyzacja**: sprowadzenie słów do ich podstawowej formy.
 
-### 3. Wektoryzacja tekstu:
-   - **CountVectorizer** (macierz częstości występowania słów).
-   - **TfidfVectorizer** (ważona częstość słów - TF-IDF).
-   - **Filtrowanie słów** (min_df=0.01, max_df=0.5), aby usunąć rzadkie i zbyt częste słowa.
-
-### 4. Podział zbioru na treningowy i testowy:
-   - **80% danych jako treningowe, 20% jako testowe**.
-   - **Stratyfikacja**, aby zachować proporcje klas.
+### 3. Podział zbioru na treningowy i testowy (ważne!)
+   - Dane są dzielone na zbiór treningowy (80%) i testowy (20%) przed wektoryzacją, aby uniknąć data leakage.
+   - Stratyfikacja, aby zachować proporcje klas. 
+      
+### 4. Wektoryzacja tekstu (po podziale zbioru)
+   - TfidfVectorizer (ważona częstość słów - TF-IDF) lub CountVectorizer (macierz częstości występowania słów).
+   - Wektoryzator jest trenowany tylko na zbiorze treningowym, a następnie stosowany do zbioru testowego.
+   - Filtrowanie słów (min_df=0.01, max_df=0.5), aby usunąć rzadkie i zbyt częste słowa.
 
 ### 5. Budowa modelu klasyfikacyjnego:
    - **Random Forest Classifier** (n_estimators=100, random_state=42).
